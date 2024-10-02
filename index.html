@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Voting App</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f4f4f9;
-    }
-    h1 {
-      font-size: 2.5em;
-      color: #333;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
-  <h1>Welcome to my voting app</h1>
+<body class="container">
+  <div class="game-container">
+    <div class="header">
+      <h2>Current Threshold Value: <span id="threshold">200</span></h2>
+      <input type="number" id="threshold-input" placeholder="Enter Value">
+      <button is="set-threshold">Set Value</button>
+    </div>
 
+    <div class="players-box">
+      <div class="player player-1">
+        <h3>Player 1</h3>
+        <div class="score" id="score1">15</div>
+        <div class="current" id="current1">
+          <span>Current:</span> 
+          <div class="current-value">0</div>
+        </div>
+      </div>
+
+      <div class="player player-2">
+        <h3>Player 2</h3>
+        <div class="score" id="score2">10</div>
+        <div class="current" id="current2">
+          <span>Current:</span> 
+          <div class="current-value">0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="hold">Hold</button>
+      <button id="roll-dice">Roll Dice</button>      
+    </div>
+
+    <button id="new-game">New Game</button>
+  </div>
+
+  <script src="./app.js"> </script>
 </body>
-
-<script src="./script.ts"> </script>
 </html>
