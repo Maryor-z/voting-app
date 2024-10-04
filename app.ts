@@ -74,6 +74,14 @@ function setValue(winningScore: number) {
         player1CurrentScore = Math.floor(player1CurrentScore / 2);
         console.log(`Player 1 current score after halving: ${player1CurrentScore}`);
     }
+
+    // if player rolls 20, score is doubled
+    if (currentDiceValue === 20) {
+        console.log(`Player 1 rolled 20. Score is doubled.`);
+        player1CurrentScore *= 2;
+        console.log(`Current score after doubling: ${player1CurrentScore}`);
+    }
+    
     return true;
   };
 
