@@ -30,6 +30,7 @@ function setValue(winningScore: number) {
 
   let player1Score = 0;
   let player1CurrentScore = 0;
+  let consecutiveRolls = 0;
   
   const player1Roll_1 = () => {
     console.log("Player 1 in Play");
@@ -56,6 +57,15 @@ function setValue(winningScore: number) {
     if (currentDiceValue === 6 || currentDiceValue === 12) {
         console.log(`Player 1 rolled ${currentDiceValue}. skips turn`);
         return false;
+    }
+
+    // player rolls same number twice, skip a turn
+    if (currentDiceValue === consecutiveRolls) {
+        console.log(`Player 1 rolled ${consecutiveRolls} twice, Turn is skiped`);
+        consecutiveRolls = 0;
+        return false;
+    } else {
+        consecutiveRolls = currentDiceValue;
     }
     return true;
   };
