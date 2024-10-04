@@ -29,6 +29,7 @@ function setValue(winningScore: number) {
   };
 
   let player1Score = 0;
+  let player1CurrentScore = 0;
   
   const player1Roll_1 = () => {
     console.log("Player 1 in Play");
@@ -39,18 +40,23 @@ function setValue(winningScore: number) {
     // to stop play
     if (currentDiceValue === 15) {
         console.log("Player 1 rolled 15, Score resets to 0, player should roll again.");
+        player1CurrentScore = 0;
         player1Score = 0; //Reset score to 0
     } else if (currentDiceValue === 10 || currentDiceValue === 1 || currentDiceValue === 19) {
         console.log(`Player 1 rolled ${currentDiceValue}. Turn ends.`);
         return false;
     } else {
-        player1Score += currentDiceValue; //add the dice value to player score
-        console.log(`Player 1 current score: ${player1Score}`);
+        player1CurrentScore += currentDiceValue; 
+        player1Score = player1CurrentScore; //add the dice value to player score
+        console.log(`Player 1 current score: ${player1CurrentScore}`)
+        console.log(`Player 1 total score: ${player1Score}`);
     }
     return true;
   };
+
+  let currentPlayer = 1;  
  
-  const HandleRotation = () => {
+  const handleRotation = () => {
     let isPlaying = true;
     // let currentPlayer;
 
@@ -60,7 +66,7 @@ function setValue(winningScore: number) {
         if (!isPlaying) {
             currentPlayer = 2;
         }
-    } else {
+    } else if (currentPlayer === 2) {
         const currentDiceValue = playerRoll_2();
         console.log(`Player 2: Current Dice Value: ${currentDiceValue}`);
         currentPlayer = 1;
@@ -69,7 +75,7 @@ function setValue(winningScore: number) {
     // const isPlayer2_playing = playerRoll_2();
   };
 
-  let currentPlayer = 1;
+
   
   const startGame = () => {
     const ifGameCanStart = setValue(60);
@@ -78,7 +84,7 @@ function setValue(winningScore: number) {
     if (!ifGameCanStart) return null;
   
     //call function to handle players rotaations
-    HandleRotation();
+    handleRotation();
   };
   
   startGame();
