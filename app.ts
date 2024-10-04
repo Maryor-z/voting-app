@@ -47,9 +47,15 @@ function setValue(winningScore: number) {
         return false;
     } else {
         player1CurrentScore += currentDiceValue; 
-        player1Score = player1CurrentScore; //add the dice value to player score
+        player1Score += player1CurrentScore; //add the dice value to player score
         console.log(`Player 1 current score: ${player1CurrentScore}`)
         console.log(`Player 1 total score: ${player1Score}`);
+    }
+
+    // Player skip turn when 6 & 12 is rolled
+    if (currentDiceValue === 6 || currentDiceValue === 12) {
+        console.log(`Player 1 rolled ${currentDiceValue}. skips turn`);
+        return false;
     }
     return true;
   };
