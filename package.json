@@ -1,0 +1,26 @@
+{
+  "name": "pig-game-api",
+  "version": "0.0.1",
+  "description": "simple-api-for-piggame",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.ts",
+    "dev": "nodemon app.ts",
+    "build": "tsc"
+  },
+  "keywords": [
+    "pig-game"
+  ],
+  "author": "maryor",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "lite-server": "2.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
