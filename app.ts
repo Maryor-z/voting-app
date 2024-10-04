@@ -67,6 +67,13 @@ function setValue(winningScore: number) {
     } else {
         consecutiveRolls = currentDiceValue;
     }
+
+    // if Player roll 1
+    if (currentDiceValue === 1) {
+        console.log(`Player 1 rolled 1. Current score is halved.`);
+        player1CurrentScore = Math.floor(player1CurrentScore / 2);
+        console.log(`Player 1 current score after halving: ${player1CurrentScore}`);
+    }
     return true;
   };
 
