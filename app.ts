@@ -20,7 +20,7 @@ function setValue(winningScore: number) {
   };
   
   const playerRoll_2 = () => {
-    console.log("Player 2 in Play");
+    console.log("Player 2 is Playing");
   
     const currentDiceValue = rollDice();
   
