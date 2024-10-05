@@ -81,7 +81,6 @@ function setValue(winningScore: number) {
         player1CurrentScore *= 2;
         console.log(`Current score after doubling: ${player1CurrentScore}`);
     }
-    
     return true;
   };
 
